@@ -1,0 +1,27 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@*@model EpiserverAssignment.Models.Pages.StartPage*@
+@model EpiserverAssignment.ViewModels.ContentViewModel
+
+@*<div>
+
+        <h1 @Html.EditAttributes(x => x.PageName)>@Model.PageName</h1>
+        <div>
+            @Html.PropertyFor(m => m.MainBody)
+        </div>
+    </div>*@
+
+<div>
+    @*<h4>Heading : @Model.Heading</h4>*@
+    <h1 @Html.EditAttributes(x => x.Heading)>@Model.Heading</h1>
+
+    <ul>
+        @foreach (var myModelData in Model.ContentList)
+        {
+            <li>
+                @myModelData.DemoText
+            </li>
+        }
+    </ul>
+</div>
